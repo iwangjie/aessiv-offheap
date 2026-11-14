@@ -1,5 +1,8 @@
 # aessiv-offheap
 
+[![verify](https://github.com/iwangjie/aessiv-offheap/actions/workflows/verify.yml/badge.svg)](https://github.com/iwangjie/aessiv-offheap/actions/workflows/verify.yml)
+[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
 AES-SIV (RFC 5297) and AES-GCM (SP 800-38D) for **JDK 8**, with the key material never entering the
 Java heap.
 
