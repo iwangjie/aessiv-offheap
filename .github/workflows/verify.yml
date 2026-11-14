@@ -1,0 +1,29 @@
+name: verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # The library targets JDK 8 and the TLA+ model runs on a modern JVM.
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: |
+            8
+            21
+
+      - name: python deps
+        run: pip install pycryptodome
+
+      - name: verify
+        env:
+          JDK8: ${{ env.JAVA_HOME_8_X64 }}
+          JAVAMOD: ${{ env.JAVA_HOME_21_X64 }}
+        run: tools/verify-all.sh

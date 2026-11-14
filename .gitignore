@@ -1,0 +1,10 @@
+build/
+out/
+.idea/
+*.iml
+
+# Downloaded by tools/verify-all.sh on first run.
+verify/tla2tools.jar
+verify/states/
+verify/*.log
+verify/MC_TTrace_*
